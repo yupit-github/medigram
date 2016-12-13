@@ -1,0 +1,144 @@
+$mainTextColor: #545657;
+$fontColorGrey: #888a8f;
+$fontColorBlue: #1192b5;
+$lightColorBlue: lighten($fontColorBlue, 15%);
+$darkColorBlue: darken($fontColorBlue, 10%);
+$errorInputValidColor: rgb(231, 76, 60);
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background-color: #1192b5;
+    font-family: "Conv_SF-UI-Text-Regular", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $mainTextColor;
+    overflow-x: hidden;
+
+    @include perspective(2500px);
+
+    @include perspective-origin(center);
+
+    .content-page {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: 100vh !important;
+        background-color: #fff;
+
+        @include box-sizing(border-box);
+
+        @include transition(all, 0.5s);
+
+        @include transform-origin(0, 0, 0);
+
+        /*@include transform-style(preserve-3d);*/
+    }
+
+    img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    a {
+        color: $mainTextColor;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 50px;
+
+        @include breakpoint(medium) {
+            font-size: 42px;
+        }
+
+
+        @include breakpoint(small) {
+            font-size: 36px;
+        }
+
+
+        @include breakpoint(medium) {
+            font-size: 32px;
+        }
+
+
+        @include breakpoint(small) {
+            font-size: 32px;
+        }
+
+
+        @include breakpoint(extra-small) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 36px;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 0 15px;
+
+        @include breakpoint(medium) {
+            font-size: 32px;
+        }
+
+
+        @include breakpoint(small) {
+            font-size: 32px;
+        }
+
+
+        @include breakpoint(extra-small) {
+            font-size: 28px;
+        }
+    }
+
+    h4 {
+        font-size: 32px;
+        color: $mainTextColor;
+
+        @include breakpoint(medium) {
+            font-size: 28px;
+        }
+
+
+        @include breakpoint(small) {
+            font-size: 28px;
+        }
+
+
+        @include breakpoint(extra-small) {
+            font-size: 24px;
+        }
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    .clearfix {
+        clear: both;
+    }
+}

@@ -1,0 +1,119 @@
+﻿.examples {
+    padding-bottom: 30px;
+    background-color: #fff;
+    font-size: 20px;
+    box-shadow: inset 0 8px 10px -10px rgba(17,146,181,0.8), inset 0 -8px 10px -10px rgba(17,146,181,0.8);
+
+    .row:first-child {
+        padding-top: 70px;
+    }
+
+    .row:not(:first-child) {
+        .examples-foto {
+            height: 365px;
+            background-color: ActiveBorder;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-size: contain;
+        }
+    }
+
+    .row:nth-child(2) {
+        margin-top: 60px;
+
+        .examples-foto {
+            background-color: #fff;
+            background-image: url(../images/example1.jpg);
+            background-position-x: 70%;
+        }
+    }
+
+    .row:nth-child(3) {
+        .examples-foto {
+            background-color: #fff;
+            background-image: url(../images/example2.jpg);
+            background-position-x: 20px;
+            position: relative;
+            top: -30px;
+        }
+
+        .examples-content {
+            height: 365px;
+            position: relative;
+            top: -30px;
+
+            p {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+@include breakpoint(medium) {
+    .examples {
+        .row:first-child {
+            padding-top: 60px;
+        }
+
+        .row:nth-child(2) {
+            margin-top: 50px;
+        }
+    }
+}
+
+
+@include breakpoint(small) {
+    .examples {
+        .row:first-child {
+            padding-top: 50px;
+        }
+
+        .row:nth-child(2) {
+            margin-top: 40px;
+        }
+    }
+}
+
+
+@include breakpoint(extra-small) {
+    .examples {
+        margin-bottom: 0;
+
+        .row:first-child {
+            padding-top: 40px;
+        }
+
+        .row:not(:first-child) {
+            .examples-foto {
+                background-position-x: center;
+            }
+
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+
+        .row:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        .row:nth-child(n+3) {
+            margin-top: 40px;
+
+            .examples-foto {
+                top: 0;
+            }
+
+            .examples-content {
+                height: auto;
+                top: 0;
+
+                p {
+                    position: relative;
+                }
+            }
+        }
+    }
+}

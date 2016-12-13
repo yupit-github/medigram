@@ -1,0 +1,72 @@
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1;
+    color: #656565;
+    background-color: #fafafa;
+    text-align: left;
+    vertical-align: middle;
+    padding: 15px 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(238, 238, 238);
+    margin-top: 10px;
+
+    @include appearance(none);
+
+    @include border-radius(3px);
+
+    @include box-sizing(border-box);
+
+    @include box-shadow(none);
+
+    @include transition-property(all);
+
+    @include transition-duration(0.2s);
+
+    @include transition-timing-function(linear);
+
+    &:focus {
+        outline: 0;
+        background-color: darken( #fafafa, 15%);
+        border-color: darken( #fafafa, 15%);
+
+        @include box-shadow(none);
+    }
+
+    &[disabled],
+    &[readonly] {
+        cursor: default;
+        background-color: #eee;
+    }
+
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: #eee;
+        font-style: italic;
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        text-indent: 0;
+
+        @include transition-property(text-indent);
+
+        @include transition-duration(0.3s);
+
+        @include transition-timing-function(ease);
+    }
+
+    &:focus::-webkit-input-placeholder,
+    &:focus::-moz-placeholder,
+    &:focus:-ms-input-placeholder {
+        text-indent: -500px;
+    }
+}

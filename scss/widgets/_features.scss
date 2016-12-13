@@ -1,0 +1,227 @@
+﻿.features {
+    background-color: #fff;
+    background-image: url("../images/doctor.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .row:first-child {
+        padding-top: 70px;
+    }
+
+    .row:last-child {
+        margin-bottom: 70px;
+    }
+
+    .row:nth-of-type(n+2) {
+        margin-top: 50px;
+    }
+
+    h3 {
+        position: relative;
+    }
+
+    ul {
+        padding: 0;
+
+        li {
+            font-size: 20px;
+            margin-top: 0;
+            z-index: 2;
+
+            & > span {
+                display: inline-block;
+                position: relative;
+                padding-left: 45px;
+            }
+
+            &:nth-child(1) > span:before,
+            &:nth-child(2) > span:before,
+            &:nth-child(3) > span:before,
+            &:nth-child(4) > span:before,
+            &:nth-child(5) > span:before,
+            &:nth-child(6) > span:before,
+            &:nth-child(7) > span:before,
+            &:nth-child(8) > span:before,
+            &:nth-child(9) > span:before {
+                position: absolute;
+                left: 20px;
+                top: 14px;
+                font-family: 'fontello';
+                font-size: 24px;
+                line-height: 1;
+                color: #1192b5;
+
+                @include transform(translate(-50%, -50%));
+            }
+
+            &:nth-child(1) > span:before {
+                content: '\F12E';
+            }
+
+            &:nth-child(2) > span:before {
+                content: '\F1C6';
+            }
+
+            &:nth-child(3) > span:before {
+                content: '\F0F3';
+            }
+
+            &:nth-child(4) > span:before {
+                content: '\F2BC';
+            }
+
+            &:nth-child(5) > span:before {
+                content: '\E80A';
+            }
+
+            &:nth-child(6) > span:before {
+                content: '\E80E';
+            }
+
+            &:nth-child(7) > span:before {
+                content: '\E810';
+            }
+
+            &:nth-child(8) > span:before {
+                content: '\F0F6';
+            }
+
+            &:nth-child(9) > span:before {
+                content: '\E800';
+            }
+
+            &:nth-of-type(n+4) {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@include breakpoint(medium) {
+    .features {
+        .row:first-child {
+            padding-top: 60px;
+        }
+
+        .row:last-child {
+            margin-bottom: 60px;
+        }
+
+        .row:nth-of-type(n+2) {
+            margin-top: 30px;
+        }
+
+        ul {
+            li {
+                font-size: 18px;
+
+                &:nth-child(1) > span:before,
+                &:nth-child(2) > span:before,
+                &:nth-child(3) > span:before,
+                &:nth-child(4) > span:before,
+                &:nth-child(5) > span:before,
+                &:nth-child(6) > span:before,
+                &:nth-child(7) > span:before,
+                &:nth-child(8) > span:before,
+                &:nth-child(9) > span:before {
+                    top: 10px;
+                }
+            }
+
+            li:nth-of-type(n+4) {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+
+@include breakpoint(small) {
+    .features {
+        .row:first-child {
+            padding-top: 50px;
+        }
+
+        .row:last-child {
+            margin-bottom: 50px;
+        }
+
+        .row:nth-of-type(n+2) {
+            margin-top: 20px;
+        }
+
+        ul {
+            li {
+                font-size: 16px;
+
+                &:nth-child(1) > span:before,
+                &:nth-child(2) > span:before,
+                &:nth-child(3) > span:before,
+                &:nth-child(4) > span:before,
+                &:nth-child(5) > span:before,
+                &:nth-child(6) > span:before,
+                &:nth-child(7) > span:before,
+                &:nth-child(8) > span:before,
+                &:nth-child(9) > span:before {
+                    top: 10px;
+                }
+            }
+
+            li:nth-of-type(n+3) {
+                margin-top: 25px;
+            }
+        }
+    }
+}
+
+
+@include breakpoint(extra-small) {
+    .features {
+        .row:first-child {
+            padding-top: 40px;
+        }
+
+        .row:last-child {
+            margin-bottom: 40px;
+        }
+
+        .row:nth-of-type(n+2) {
+            margin-top: 10px;
+        }
+
+        ul {
+            li {
+                font-size: 16px;
+                text-align: center;
+
+                &:nth-child(1) > span:before,
+                &:nth-child(2) > span:before,
+                &:nth-child(3) > span:before,
+                &:nth-child(4) > span:before,
+                &:nth-child(5) > span:before,
+                &:nth-child(6) > span:before,
+                &:nth-child(7) > span:before,
+                &:nth-child(8) > span:before,
+                &:nth-child(9) > span:before {
+                    top: 10px;
+                }
+            }
+
+            li:nth-of-type(n) {
+                margin-top: 20px;
+            }
+        }
+    }
+}

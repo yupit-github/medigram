@@ -1,0 +1,174 @@
+//3D menu navigation animation
+.content-moved {
+    @include transform-origin(0, 0, 0);
+
+    @include transform(translateX(0%) rotateY(50deg));
+}
+
+ul.navigation-menu {
+    position: fixed;
+    top: 100px;
+    left: 100%;
+    display: block;
+    z-index: 100;
+
+    li + li {
+        margin-top: 15px;
+    }
+
+    li {
+        text-align: right;
+
+        @include transition-property(all);
+
+        @include transition-duration(0.3s);
+
+        @include transition-timing-function(linear);
+
+        &:nth-child(1) {
+            @include transition-delay(0.4s);
+        }
+
+        &:nth-child(2) {
+            @include transition-delay(0.2s);
+        }
+
+        &:nth-child(3) {
+            @include transition-delay(0s);
+        }
+
+        a {
+            font-size: 25px;
+            line-height: 1;
+            vertical-align: baseline;
+            color: rgb(244, 247, 248);
+        }
+    }
+
+    &.menu-opened {
+        z-index: 1;
+
+        li {
+            padding-right: 35px;
+
+            @include transform(translateX(-100%));
+            
+            &:nth-child(1) {
+                @include transition-delay(0s);
+            }
+
+            &:nth-child(2) {
+                @include transition-delay(0.2s);
+            }
+
+            &:nth-child(3) {
+                @include transition-delay(0.4s);
+            }
+        }
+    }
+}
+
+.display-menu {
+    position: fixed;
+    top: 20px;
+    right: 35px;
+    z-index: 100;
+    width: 48px;
+    height: 40px;
+    background-color: #1192b5;
+    border: 2px solid rgb(244, 247, 248);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 11px;
+        right: 11px;
+        height: 2px;
+        background: rgb(244, 247, 248);
+
+        @include transform(translateY(-50%));
+
+        @include transition(background, 0s, lianer, 0.3s);
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(244, 247, 248);
+
+            @include transition-duration(0.3s, 0.3s);
+
+            @include transition-delay(0.3s, 0s);
+        }
+
+        &:before {
+            top: -6px;
+
+            @include transition-property(top, transform);
+        }
+
+        &:after {
+            bottom: -6px;
+
+            @include transition-property(bottom, transform);
+        }
+    }
+
+    &.active span {
+        background: none;
+
+        &:before,
+        &:after {
+            @include transition-delay(0s, 0.3s);
+        }
+
+        &:before {
+            top: 0;
+
+            @include transform(rotate(45deg));
+        }
+
+        &:after {
+            bottom: 0;
+
+            @include transform(rotate(-45deg));
+        }
+    }
+}
+
+
+@include breakpoint(iphone6-plus-portrait) {
+    .display-menu {
+        top: 20px;
+        right: 20px;
+    }
+
+    ul.navigation-menu {
+        li + li {
+            margin-top: 20px;
+        }
+
+        li {
+            a {
+                font-size: 20px;
+            }
+        }
+
+        &.menu-opened {
+            li {
+                padding-right: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@mixin breakpoint($point) {
+    @if $point == large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $point == medium {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else if $point == small {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+    @else if $point == extra-small {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $point == iphone6 {
+        @media (max-width: 375px) {
+            @content;
+        }
+    }
+    @else if $point == iphone6-plus-portrait {
+        @media (max-width: 414px) {
+            @content;
+        }
+    }
+    @else if $point == ipad-portrait {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $point == ipad-landscape {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+}

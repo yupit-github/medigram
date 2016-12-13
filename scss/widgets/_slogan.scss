@@ -1,0 +1,142 @@
+﻿.slogan {
+    height: 100vh;
+    background-color: #f4f7f8;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: rgba(255,255,255,0.7);
+    }
+
+    .parallaxWrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: -30%;
+        left: 0;
+        z-index: 1;
+        background-image: url(../images/slogan-bg.jpg);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: 0px;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .container {
+        position: relative;
+        top: 50%;
+        z-index: 3;
+
+        @include transform(translateY(-50%));
+    }
+
+    .slogan-content {
+        text-align: center;
+
+        h2 {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .button {
+            margin-top: 50px;
+            @include transition-duration(1s !important) ;
+            @include transition-delay(0.7s);
+        }
+    }
+
+    .arrow-to-anchor {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        z-index: 3;
+        font-size: 40px;
+        color: #1192b5;
+
+        @include transform(translateX(-50%));
+
+        @include animation-name(arrow-pulsing);
+
+        @include animation-duration(0.5s);
+
+        @include animation-direction(alternate);
+
+        @include animation-timing-function(linear);
+
+        @include animation-iteration-count(infinite);
+
+        @keyframes arrow-pulsing {
+            0% {
+                bottom: 20px;
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 35px;
+                opacity: 0.6;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            color: #1192b5;
+        }
+    }
+
+    @include breakpoint(medium) {
+        .slogan-content {
+            .button {
+                margin-top: 50px;
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .slogan-content {
+            .button {
+                margin-top: 40px;
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .slogan-content {
+            .button {
+                margin-top: 30px;
+                padding-left: 70px;
+                padding-right: 70px;
+            }
+        }
+    }
+
+
+    @include breakpoint(iphone6) {
+        .slogan-content {
+            .button {
+                width: 100%;
+            }
+        }
+    }
+
+
+    @include breakpoint(ipad-landscape) {
+        .arrow-to-anchor {
+            bottom: 20px;
+
+            @include animation(none);
+        }
+    }
+}

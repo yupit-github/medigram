@@ -1,0 +1,231 @@
+﻿.benefits {
+    background-color: #fff;
+
+    .row:first-child {
+        margin-top: 70px;
+    }
+
+    .benefits-slider {
+        margin-bottom: -60px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            cursor: ew-resize;
+        }
+
+        .slick-track:focus {
+            outline: none;
+        }
+    }
+
+    .benefit-item {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding-bottom: 60px;
+        background-color: #f1f9fa;
+        text-align: center;
+
+        @include transition-property(background-color);
+
+        @include transition-duration(0.3s);
+
+        @include transition-timing-function(linear);
+
+        &:focus {
+            outline: none;
+        }
+
+        .benefit-item-content {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 60px;
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 90px;
+                height: 90px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                background-color: transparent;
+                background-image: url(../images/app-icons/icSecurity.png);
+                background-repeat: no-repeat;
+                background-position-x: center;
+                background-position-y: center;
+                background-size: cover;
+
+                @include transform(translate(-50%, -50%));
+            }
+
+            .benefit-item-description {
+                p {
+                    font-size: 16px;
+                    margin-top: 15px;
+                }
+            }
+
+            .benefit-item-list {
+                display: inline-block;
+                margin-top: 40px;
+                font-size: 20px;
+                line-height: 2;
+                text-align: left;
+
+                li {
+                    position: relative;
+                    padding-left: 40px;
+
+                    &:after {
+                        content: '\e812';
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        left: 0;
+                        top: 20px;
+                        font-family: "fontello";
+                        color: #1192b5;
+                        font-size: 20px;
+                        line-height: 1;
+
+                        @include transform(translate(0, -50%));
+                    }
+                }
+            }
+        }
+
+        &:nth-child(3n+2) {
+            background-color: #fcf6fb;
+
+            .benefit-item-content:after {
+                background-image: url(../images/app-icons/icClock.png);
+            }
+        }
+
+        &:nth-child(3n+3) {
+            background-color: #f1f9fa;
+
+            & .benefit-item-content:after {
+                background-image: url(../images/app-icons/icMessaging.png);
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        .row:first-child {
+            margin-top: 60px;
+        }
+
+        .benefit-item {
+            .benefit-item-content {
+                .benefit-item-description {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                .benefit-item-list {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .row:first-child {
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            .benefit-item-content {
+                &:after {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .benefit-item-description {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                .benefit-item-list {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .row:first-child {
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+
+            .benefit-item-content {
+                &:after {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .benefit-item-description {
+                    h4 {
+                        text-align: center;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .benefit-item-list {
+                    font-size: 16px;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(iphone6) {
+        .benefit-item {
+            text-align: left;
+
+            &:after {
+                width: 70px;
+                height: 70px;
+                left: auto;
+                right: 0;
+
+                @include transform(translate(-50%, -50%));
+            }
+
+            h4 {
+                text-align: left;
+            }
+
+            .benefit-item-content {
+                .benefit-item-description {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                .benefit-item-list {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

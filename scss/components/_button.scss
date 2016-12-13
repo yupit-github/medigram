@@ -1,0 +1,71 @@
+﻿.button {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 25px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #31c9d6;
+    background-image: linear-gradient(to bottom, #31c9d6, #1192b5);
+    vertical-align: middle;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    cursor: pointer;
+
+    @include appearance(none);
+
+    @include box-sizing(border-box);
+
+    @include border-radius(3px);
+
+    @include box-shadow(none);
+
+    @include user-select(none);
+
+    @include transition-property(all);
+
+    @include transition-duration(0.2s);
+
+    @include transition-timing-function(linear);
+
+    @include breakpoint(medium) {
+        margin-top: 20px;
+    }
+
+
+    @include breakpoint(small) {
+        margin-top: 20px;
+    }
+
+
+    @include breakpoint(extra-small) {
+        margin-top: 20px;
+    }
+
+    &:hover {
+        outline: 0;
+        background-image: linear-gradient(to bottom, lighten(#31c9d6, 10%), #1192b5);
+        color: #fff;
+    }
+
+    &:focus {
+        outline-width: 0;
+        color: #fff;
+    }
+
+    &:active {
+        outline: 0;
+        background-image: linear-gradient(to bottom, #1192b5, #31c9d6);
+        color: #fff;
+    }
+
+    &:disabled {
+        background-image: linear-gradient(to bottom, #bbb, #eee) !important;
+        cursor: default;
+    }
+}

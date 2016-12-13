@@ -1,0 +1,103 @@
+﻿/* Slick Slider Arrows */
+.slick-prev-custom,
+.slick-next-custom {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    z-index: 9;
+    width: 23px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    @include transform(translate(0, -50%));
+}
+
+    .slick-prev-custom:hover,
+    .slick-prev-custom:focus,
+    .slick-next-custom:hover,
+    .slick-next-custom:focus {
+        color: transparent;
+        outline: none;
+        background: transparent;
+    }
+
+        .slick-prev-custom:hover:before,
+        .slick-next-custom:hover:before {
+            opacity: 1;
+        }
+
+    .slick-prev-custom.slick-disabled:before,
+    .slick-next-custom.slick-disabled:before {
+        opacity: .25;
+    }
+
+    .slick-prev-custom:before,
+    .slick-next-custom:before {
+        font-family: 'fontello';
+        font-size: 40px;
+        line-height: 1;
+        opacity: .75;
+        color: #1192b5;
+    }
+
+.slick-prev-custom {
+    left: 25px;
+}
+
+[dir='rtl'] .slick-prev-custom {
+    right: 25px;
+    left: auto;
+}
+
+.slick-next-custom {
+    right: 25px;
+}
+
+[dir='rtl'] .slick-next-custom {
+    right: auto;
+    left: 25px;
+}
+
+.slick-prev-custom:before,
+[dir='rtl'] .slick-prev-custom:before {
+    content: '\e814';
+}
+
+.slick-next-custom:before,
+[dir='rtl'] .slick-next-custom:before {
+    content: '\e815';
+}
+
+@include breakpoint(ipad-portrait) {
+    .slick-prev-custom {
+        left: 0;
+    }
+
+    [dir='rtl'] .slick-prev-custom {
+        right: 0;
+    }
+
+    .slick-next-custom {
+        right: 0;
+    }
+
+    [dir='rtl'] .slick-next-custom {
+        left: 0;
+    }
+}
+
+@include breakpoint(iphone6) {
+    .slick-prev-custom,
+    .slick-next-custom,
+    [dir='rtl'] .slick-prev-custom,
+    [dir='rtl'] .slick-next-custom {
+        display: none !important;
+    }
+}

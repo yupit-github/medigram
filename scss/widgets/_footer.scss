@@ -1,0 +1,133 @@
+﻿footer {
+    background-color: #fff;
+    color: $fontColorGrey;
+
+    .row:first-child {
+        padding-top: 30px;
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: 0;
+            left: 15px;
+            right: 15px;
+            background-color: #d8d8d8;
+        }
+    }
+
+    .row:last-child {
+        padding-bottom: 30px;
+    }
+
+    .footer-menu {
+
+        li {
+            display: inline-block;
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 1px;
+                background-color: $fontColorGrey;
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                right: 50%;
+
+                @include transition-property(all);
+
+                @include transition-duration(0.2s);
+
+                @include transition-timing-function(linear);
+            }
+
+            &:hover:after {
+                width: auto;
+                left: 0;
+                right: 0;
+            }
+
+            &:active:after {
+                background-color: darken($fontColorGrey, 10%) !important;
+            }
+
+            a {
+                color: $fontColorGrey;
+                font-size: 12px;
+
+                &:focus {
+                    outline: 0;
+                    color: darken($fontColorGrey, 10%) !important;
+                    text-decoration: none;
+                }
+
+                &:active {
+                    color: darken($fontColorGrey, 10%) !important;
+                }
+            }
+        }
+
+        li + li {
+            margin-left: 60px;
+        }
+    }
+
+    .copyright {
+        text-align: right;
+        font-size: 12px;
+    }
+
+    @include breakpoint(small) {
+        .row:first-child {
+            padding-top: 20px;
+        }
+
+        .row:last-child {
+            padding-bottom: 20px;
+        }
+
+        .footer-menu {
+            li + li {
+                margin-left: 40px;
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .row:first-child {
+            padding-top: 15px;
+        }
+
+        .row:last-child {
+            padding-bottom: 15px;
+        }
+
+        .footer-menu {
+            text-align: center;
+            ul{
+                display: inline-block;
+            }
+
+            li + li {
+                margin-left: 20px;
+            }
+
+            li {
+                a {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .copyright {
+            text-align: center !important;
+            margin-top: 20px;
+        }
+    }
+}

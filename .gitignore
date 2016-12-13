@@ -1,0 +1,16 @@
+/.idea/
+~/.sass-cache/
+/.sass-cache/
+
+/bower_components
+/node_modules
+*.rar
+*.zip
+*.log
+.DS_Store
+*.config
+
+.htaccess
+gulpfile.js
+package.json
+Web.config
